@@ -1,39 +1,27 @@
-//Lecture: Loops
-//For Loops:
+//CODING CHALLENGE 2
 
-var names = ['Sebastian', 'James', 'Rick', 'Stan', 'Casey'];
+function printFullAge(years){
+    var ages = [];
+    var fullAges = [];
 
-for (var i = 0; i < 5; i++){
-    console.log(names[i]);
-}
-
-// This will print the array names in order from 0 to 5
-
-for (var p = names.length - 1; p >= 0; p--){
-    console.log(names[p]);
-}
-
-// And this up here will print the names backwards, meaning from 5 to 0.
-
-
-//While Loops:
-
-var i = 0;
-while(i < names.length){
-    console.log(names[i]);
-    i++;
-}
-
-for (var i = 1; i <=5; i++){
-    console.log(i);
-    if(i === 3){
-        break;
+    for (var i = 0; i < years.length; i++){
+        ages.unshift(2018 - years[i]);
     }
+    
+    for (var p = 0; p < ages.length ; p++){
+        if(ages[p] >= 18){
+            console.log('This person is of full age with ' + ages[p]);
+            fullAges.push(true);
+        }
+        else
+        {
+            console.log('This person is not of full age with ' + ages[p]);
+            fullAges.push(false);
+        }
+    }
+    return fullAges;
 }
 
-for (var i = 1; i <=5; i++){
-    if(i === 3){
-        continue;
-    }
-    console.log(i);
-}
+var years = [1994, 1986, 2015, 2006, 1999];
+var full_1 = printFullAge(years);
+var full_2 = printFullAge([1999, 2014, 1980]);
